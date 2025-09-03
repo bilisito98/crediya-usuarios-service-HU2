@@ -1,4 +1,4 @@
-package co.com.crediya.solicitudes.application.usecase;
+package co.com.crediya.solicitudes.domain.usecase;
 
 import co.com.crediya.solicitudes.domain.model.Usuario;
 import co.com.crediya.solicitudes.domain.ports.UsuarioRepositoryPort;

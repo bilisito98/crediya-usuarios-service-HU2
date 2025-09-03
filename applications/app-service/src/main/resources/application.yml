@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a/creditya_db?sslmode=require
+    url: jdbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a.oregon-postgres.render.com:5432/creditya_db?sslmode=require
     username: creditya_db_user
     password: NxQrf1h15WeUU61fVpAFRersiAuGQQSf
     driver-class-name: org.postgresql.Driver
@@ -17,17 +17,20 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   r2dbc:
-    url: r2dbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a/creditya_db
+    url: r2dbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a.oregon-postgres.render.com:5432/creditya_db?sslmode=require
     username: creditya_db_user
     password: NxQrf1h15WeUU61fVpAFRersiAuGQQSf
 
   flyway:
-    enabled: true
-    url: jdbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a/creditya_db?sslmode=require
+    enabled: false
+    url: jdbc:postgresql://dpg-d2n56fqli9vc73bnvas0-a.oregon-postgres.render.com:5432/creditya_db?sslmode=require
     user: creditya_db_user
     password: NxQrf1h15WeUU61fVpAFRersiAuGQQSf
-    locations: classpath:migration
     baseline-on-migrate: true
+    locations: classpath:migration
+    mixed: true
+    connect-retries: 3
+    validate-on-migrate: false
 
   main:
     banner-mode: console

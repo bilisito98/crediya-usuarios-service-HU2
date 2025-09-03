@@ -1,19 +1,16 @@
-package co.com.crediya.solicitudes.application.usecase;
+package co.com.crediya.solicitudes.domain.usecase;
 
 import co.com.crediya.solicitudes.domain.model.Solicitud;
 import co.com.crediya.solicitudes.domain.ports.ClienteRepositoryPort;
 import co.com.crediya.solicitudes.domain.ports.SolicitudRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.transaction.annotation.Transactional;
+
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-/**
- * Caso de uso para crear nuevas solicitudes.
- */
 @Slf4j
 @RequiredArgsConstructor
 public class CrearSolicitudUseCase {
@@ -21,7 +18,6 @@ public class CrearSolicitudUseCase {
     private final SolicitudRepositoryPort solicitudRepository;
     private final ClienteRepositoryPort clienteRepository;
 
-    @Transactional
     public Mono<Solicitud> ejecutar(UUID clienteId, Double monto, Integer plazoMeses) {
 
         if (clienteId == null)
@@ -42,9 +38,8 @@ public class CrearSolicitudUseCase {
                             .fechaCreacion(LocalDate.now())
                             .build();
 
-                    log.info("Creando solicitud para clienteId={} monto={}", clienteId, monto);
+                    System.out.printf("Creando solicitud para clienteId=%s monto=%s%n", clienteId, monto);
 
-                    // Guardar usando el método correcto del puerto
                     return solicitudRepository.guardarSolicitud(solicitud);
                 });
     }

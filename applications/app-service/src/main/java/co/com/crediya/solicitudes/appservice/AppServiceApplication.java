@@ -2,7 +2,7 @@ package co.com.crediya.solicitudes.appservice;
 
 import co.com.crediya.solicitudes.domain.ports.UsuarioRepositoryPort;
 import co.com.crediya.solicitudes.domain.ports.SolicitudRepositoryPort;
-import co.com.crediya.solicitudes.application.usecase.RegistrarUsuarioUseCase;
+import co.com.crediya.solicitudes.domain.usecase.RegistrarUsuarioUseCase;
 import co.com.crediya.solicitudes.domain.usecase.RegistrarSolicitudUseCase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

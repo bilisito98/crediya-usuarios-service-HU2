@@ -1,11 +1,9 @@
 plugins {
-    java
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
+    kotlin("jvm") version "1.9.10"
+    kotlin("plugin.spring") version "1.9.10"
 }
-
-group = "co.com.crediya"
-version = "1.0.0-SNAPSHOT"
 
 java {
     toolchain {
@@ -18,29 +16,43 @@ repositories {
 }
 
 dependencies {
-    // Dependencias locales
-    implementation(project(":applications:usecase"))
     implementation(project(":domain:model"))
     implementation(project(":domain:usecase"))
+    implementation(project(":infrastructure:entity"))
     implementation(project(":infrastructure:driven-adapters"))
-    implementation(project(":infrastructure:entry-points:reactive-web-api"))
 
-    // Spring Boot y R2DBC
+    // Spring Boot Starters
     implementation("org.springframework.boot:spring-boot-starter-webflux:3.3.1")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.1")
-    implementation("io.r2dbc:r2dbc-postgresql:0.8.2.RELEASE")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.3.1")
 
-    // Swagger
-    implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.2.0")
+    // R2DBC Postgres (versión estable)
+    implementation("io.r2dbc:r2dbc-postgresql:0.8.13.RELEASE")
+    implementation("org.postgresql:postgresql:42.7.3")
+
+    // Flyway
+    implementation("org.flywaydb:flyway-core:10.20.0")
+
+    // Validación
+    implementation("org.springframework.boot:spring-boot-starter-validation:3.3.1")
+
+    // OpenAPI/Swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.3.0")
+
+    // Jackson + Kotlin
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.1")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
 
     // Lombok
-    compileOnly("org.projectlombok:lombok:1.18.28")
-    annotationProcessor("org.projectlombok:lombok:1.18.28")
+    compileOnly("org.projectlombok:lombok:1.18.32")
+    annotationProcessor("org.projectlombok:lombok:1.18.32")
 
     // Tests
+    testCompileOnly("org.projectlombok:lombok:1.18.32")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.32")
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.3.1")
-    testImplementation("io.projectreactor:reactor-test:3.5.12")
 }
+
 
 // Configuración de BootJar
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {

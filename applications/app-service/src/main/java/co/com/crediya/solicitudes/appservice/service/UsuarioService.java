@@ -1,7 +1,7 @@
 package co.com.crediya.solicitudes.appservice.service;
 
 import co.com.crediya.solicitudes.domain.model.Usuario;
-import co.com.crediya.solicitudes.application.usecase.RegistrarUsuarioUseCase;
+import co.com.crediya.solicitudes.domain.usecase.RegistrarUsuarioUseCase;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

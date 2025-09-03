@@ -1,7 +1,6 @@
 plugins {
     id("org.springframework.boot") version "3.3.1" apply false
     kotlin("jvm") version "1.9.10"
-    `java-library`
 }
 
 java {
