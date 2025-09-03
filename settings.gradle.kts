@@ -20,8 +20,8 @@ project(":domain:usecase").projectDir = file("domain/usecase")
 include("infrastructure:driven-adapters")
 project(":infrastructure:driven-adapters").projectDir = file("infrastructure/driven-adapters")
 
-include("infrastructure:entry-points:reactive-web-api")
-project(":infrastructure:entry-points:reactive-web-api").projectDir = file("infrastructure/entry-points/reactive-web-api")
+include("infrastructure:entry-points:reactive-web")
+project(":infrastructure:entry-points:reactive-web").projectDir = file("infrastructure/entry-points/reactive-web")
 
 include("applications:usecase")
 project(":applications:usecase").projectDir = file("applications/usecase")

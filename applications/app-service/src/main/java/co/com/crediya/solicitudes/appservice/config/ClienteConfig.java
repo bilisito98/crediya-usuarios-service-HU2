@@ -2,7 +2,7 @@ package co.com.crediya.solicitudes.appservice.config;
 
 import co.com.crediya.solicitudes.domain.usecase.ClienteUseCase;
 import co.com.crediya.solicitudes.domain.ports.ClienteRepositoryPort;
-import co.com.crediya.solicitudes.appservice.service.ClienteService;
+import co.com.crediya.solicitudes.infrastructure.service.ClienteService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -20,41 +20,40 @@ dependencies {
     implementation(project(":domain:usecase"))
     implementation(project(":infrastructure:entity"))
     implementation(project(":infrastructure:driven-adapters"))
+    implementation(project(":infrastructure:entry-points:reactive-web"))
 
     // Spring Boot Starters
-    implementation("org.springframework.boot:spring-boot-starter-webflux:3.3.1")
-    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.1")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.3.1")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
-    // R2DBC Postgres (versión estable)
-    implementation("io.r2dbc:r2dbc-postgresql:0.8.13.RELEASE")
-    implementation("org.postgresql:postgresql:42.7.3")
+    // R2DBC Postgres
+    implementation("io.r2dbc:r2dbc-postgresql:0.8.2.RELEASE")
+    implementation("org.postgresql:postgresql:42.6.0")
 
     // Flyway
-    implementation("org.flywaydb:flyway-core:10.20.0")
+    implementation("org.flywaydb:flyway-core")
 
     // Validación
-    implementation("org.springframework.boot:spring-boot-starter-validation:3.3.1")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 
     // OpenAPI/Swagger
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.3.0")
 
     // Jackson + Kotlin
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.1")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // Lombok
-    compileOnly("org.projectlombok:lombok:1.18.32")
-    annotationProcessor("org.projectlombok:lombok:1.18.32")
+    compileOnly ("org.projectlombok:lombok:1.18.30")
+    annotationProcessor ("org.projectlombok:lombok:1.18.30")
 
     // Tests
-    testCompileOnly("org.projectlombok:lombok:1.18.32")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.32")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:3.3.1")
+    testCompileOnly("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-
-// Configuración de BootJar
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
     archiveFileName.set("app-service.jar")
     mainClass.set("co.com.crediya.solicitudes.appservice.AppServiceApplication")

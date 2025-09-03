@@ -1,4 +1,4 @@
-package co.com.crediya.solicitudes.appservice.service;
+package co.com.crediya.solicitudes.infrastructure.service;
 
 import co.com.crediya.solicitudes.domain.model.Solicitud;
 import co.com.crediya.solicitudes.domain.ports.SolicitudRepositoryPort;

@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
 @SpringBootApplication(scanBasePackages = {
-        "co.com.crediya.solicitudes.appservice.service",
-        "co.com.crediya.solicitudes.appservice.controller",
+        "co.com.crediya.solicitudes.infrastructure.service",
+        "co.com.crediya.usuariosservice.entrypoints.reactiveweb.controller",
         "co.com.crediya.solicitudes.domain.usecase",
         "co.com.crediya.solicitudes.infrastructure.adapters",
         "co.com.crediya.solicitudes.infrastructure.r2dbc",

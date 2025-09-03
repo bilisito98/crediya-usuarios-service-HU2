@@ -19,7 +19,7 @@
             <option value="$PROJECT_DIR$/infrastructure/driven-adapters" />
             <option value="$PROJECT_DIR$/infrastructure/entity" />
             <option value="$PROJECT_DIR$/infrastructure/entry-points" />
-            <option value="$PROJECT_DIR$/infrastructure/entry-points/reactive-web-api" />
+            <option value="$PROJECT_DIR$/infrastructure/entry-points/reactive-web" />
           </set>
         </option>
       </GradleProjectSettings>

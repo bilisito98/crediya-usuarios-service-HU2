@@ -1,6 +1,6 @@
-package co.com.crediya.solicitudes.appservice.controller;
+package co.com.crediya.usuariosservice.entrypoints.reactiveweb.controller;
 
-import co.com.crediya.solicitudes.appservice.service.UsuarioService;
+import co.com.crediya.solicitudes.infrastructure.service.UsuarioService;
 import co.com.crediya.solicitudes.domain.model.Usuario;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
